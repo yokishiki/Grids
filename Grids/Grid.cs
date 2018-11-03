@@ -9,6 +9,7 @@ namespace Grids
 {
     public class Grid
     {
+        public static bool IsHexa = true;
         public Cell[,] Cells { get; set; }
         public List<Cell> Obstacles { get; set; }
         public int CountN { get; set; }

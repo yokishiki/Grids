@@ -15,6 +15,7 @@ namespace Grids
         public GridApp()
         {
             InitializeComponent();
+            cbGridType.SelectedIndex = 0;
             pictureBox1.Focus();
             pictureBox1.Image = new Bitmap(600, 600);
         }
@@ -33,14 +34,33 @@ namespace Grids
             double dx = Math.Sqrt(3)  * a;
             int n = Convert.ToInt32(numericUpDownX.Value);
             int m = Convert.ToInt32(numericUpDownY.Value);
-            Cell[,] cells = new HexaCell[n,m];
-            for (int i = 0; i < n; i++)
+            Cell[,] cells;
+            if (cbGridType.SelectedIndex == 0)
             {
-                for (int j = 0; j < m; j++)
+                Grid.IsHexa = true;
+                cells = new HexaCell[n, m];
+                for (int i = 0; i < n; i++)
                 {
-                    cells[i,j] = new HexaCell(new PointF((float)(x0 + dx * j + i % 2 * a * Math.Sqrt(3) / 2.0), (float)(y0 + dy * i)),
-                        new Point(i, j), a);
+                    for (int j = 0; j < m; j++)
+                    {
+                        cells[i, j] = new HexaCell(new PointF((float)(x0 + dx * j + i % 2 * a * Math.Sqrt(3) / 2.0), (float)(y0 + dy * i)),
+                            new Point(i, j), a);
+                    }
                 }
+            }
+            else
+            {
+                Grid.IsHexa = false;
+                cells = new QuadraCell[n, m];
+                for (int i = 0; i < n; i++)
+                {
+                    for (int j = 0; j < m; j++)
+                    {
+                        cells[i, j] = new QuadraCell(new PointF((float)(i *a + a/2), (float)(j*a +a/2)), 
+                            new Point(i, j), a);
+                    }
+                }
+
             }
             grid = new Grid(cells, n, m);
             Draw();

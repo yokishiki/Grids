@@ -38,6 +38,7 @@
             this.numericUpDownY = new System.Windows.Forms.NumericUpDown();
             this.buttonDrawGrid = new System.Windows.Forms.Button();
             this.buttonFindPath = new System.Windows.Forms.Button();
+            this.cbGridType = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownY)).BeginInit();
@@ -144,11 +145,23 @@
             this.buttonFindPath.UseVisualStyleBackColor = true;
             this.buttonFindPath.Click += new System.EventHandler(this.buttonFindPath_Click);
             // 
-            // Form1
+            // cbGridType
+            // 
+            this.cbGridType.FormattingEnabled = true;
+            this.cbGridType.Items.AddRange(new object[] {
+            "Hexagonal",
+            "Square"});
+            this.cbGridType.Location = new System.Drawing.Point(619, 208);
+            this.cbGridType.Name = "cbGridType";
+            this.cbGridType.Size = new System.Drawing.Size(129, 21);
+            this.cbGridType.TabIndex = 10;
+            // 
+            // GridApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(757, 616);
+            this.Controls.Add(this.cbGridType);
             this.Controls.Add(this.buttonFindPath);
             this.Controls.Add(this.buttonDrawGrid);
             this.Controls.Add(this.numericUpDownY);
@@ -159,7 +172,7 @@
             this.Controls.Add(this.buttonSetStartCell);
             this.Controls.Add(this.buttonAddObstacle);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "Form1";
+            this.Name = "GridApp";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownX)).EndInit();
@@ -181,6 +194,7 @@
         private System.Windows.Forms.NumericUpDown numericUpDownY;
         private System.Windows.Forms.Button buttonDrawGrid;
         private System.Windows.Forms.Button buttonFindPath;
+        private System.Windows.Forms.ComboBox cbGridType;
     }
 }
 
