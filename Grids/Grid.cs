@@ -29,6 +29,7 @@ namespace Grids
         {
             using (Graphics g = Graphics.FromImage(bitmap))
             {
+                g.Clear(Color.White);
                 for (int i = 0; i < CountN; i++)
                     for (int j = 0; j < CountM; j++)
                         Cells[i,j].Draw(bitmap);
