@@ -50,6 +50,7 @@ namespace Grids
             }
             else
             {
+                a *= 2;
                 Grid.IsHexa = false;
                 cells = new QuadraCell[n, m];
                 for (int i = 0; i < n; i++)
