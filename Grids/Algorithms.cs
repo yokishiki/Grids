@@ -33,6 +33,8 @@ namespace Grids
                 {
                     for (int j = Math.Max(0, current.Coordinates.Y - 1); j <= Math.Min(grid.CountM - 1, current.Coordinates.Y + 1); j++)
                     {
+                        if (Grid.IsHexa == false && i != current.Coordinates.X && j != current.Coordinates.Y)
+                            continue;
                         if (current.Coordinates.X == i && current.Coordinates.Y == j)
                             continue;
                         if (current.Coordinates.X % 2 == 0 && i % 2 != 0 && j == current.Coordinates.Y + 1)
