@@ -1,6 +1,6 @@
 ﻿namespace Grids
 {
-    partial class Form1
+    partial class GridApp
     {
         /// <summary>
         /// Required designer variable.

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Grids
 {
-    public partial class Form1 : Form
+    public partial class GridApp : Form
     {
-        public Form1()
+        public GridApp()
         {
             InitializeComponent();
             pictureBox1.Focus();
