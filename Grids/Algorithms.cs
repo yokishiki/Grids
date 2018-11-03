@@ -51,6 +51,7 @@ namespace Grids
 
                         if (watched.Contains(grid.Cells[i, j]) && newCost >= costWatched[i, j])
                             continue;
+                        watched.Enqueue(grid.Cells[i, j]);
                         parent[i, j] = current;
                         currentCostWatched[grid.Cells[i, j]] = newCost;
                         costWatched[i, j] = newCost;
